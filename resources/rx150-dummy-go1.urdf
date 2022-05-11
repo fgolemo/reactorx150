@@ -4,6 +4,115 @@
     <!--    <texture filename="rx150_meshes/interbotix_black.png"/>-->
     <color rgba="0.5 0.5 0.5 1"/>
   </material>
+
+  <!-- Adding dummy GO1 -->
+  <link name="go1/base_link">
+    <visual>
+      <geometry>
+        <box size="0.6 0.3 0.22"/>
+      </geometry>
+      <material name="interbotix_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.3 0.22"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="go1/fr_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="interbotix_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="go1/fl_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="interbotix_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="go1/rr_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="interbotix_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="go1/rl_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="interbotix_black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.13"/>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="go1_arm_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.15 0 0.11"/>
+    <parent link="go1/base_link"/>
+    <child link="rx150/base_link"/>
+  </joint>
+  <joint name="go1_fr_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.25 -0.1 -0.12"/>
+    <parent link="go1/base_link"/>
+    <child link="go1/fr_link"/>
+  </joint>
+  <joint name="go1_fl_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.25 0.1 -0.12"/>
+    <parent link="go1/base_link"/>
+    <child link="go1/fl_link"/>
+  </joint>
+  <joint name="go1_rr_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.25 -0.1 -0.12"/>
+    <parent link="go1/base_link"/>
+    <child link="go1/rr_link"/>
+  </joint>
+  <joint name="go1_rl_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.25 0.1 -0.12"/>
+    <parent link="go1/base_link"/>
+    <child link="go1/rl_link"/>
+  </joint>
+
+  <!-- Original arm urdf -->
+
   <link name="rx150/base_link">
     <visual>
       <origin rpy="0 0 -1.570796326795" xyz="0 0 0"/>
